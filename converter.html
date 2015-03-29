@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<head><title>Date converter jQuery plugin</title>
+		<meta charset="utf-8">
+		<!-- <link rel="stylesheet" type="text/css" href="css/calendar.css" />
+		<link rel="stylesheet" type="text/css" href="css/custom_1.css" />
+		<link rel="stylesheet" type="text/css" href="css/custom.css" /> -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+		<style>
+			select.form-control{
+				width: auto;
+				display: inline-block;
+			}
+			body {
+			    //min-height: 2000px;
+			    padding-top: 70px;
+			}
+		</style>
+</head>
+<body>
+	<div class="container">
+	<nav class="navbar navbar-default navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">Demo</a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+            <li class="active"><a href="#">Date Converter</a></li>
+            <li><a href="index.html">Nepali Calendar</a></li>
+            <!-- <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Dropdown <span class="caret"></span></a>
+              <ul class="dropdown-menu" role="menu">
+                <li><a href="#">Action</a></li>
+                <li><a href="#">Another action</a></li>
+                <li><a href="#">Something else here</a></li>
+                <li class="divider"></li>
+                <li class="dropdown-header">Nav header</li>
+                <li><a href="#">Separated link</a></li>
+                <li><a href="#">One more separated link</a></li>
+              </ul>
+            </li> -->
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </nav>
+			<div class="custom-calendar-wrap custom-calendar-full">
+				<div class="custom-header clearfix">
+					<h2>jQuery Date Converter Plugin<span id="result"></span></h2>
+					<h3 class="custom-month-year">
+						<span id="custom-month" class="custom-month"></span>
+						<span id="custom-year" class="custom-year"></span>
+						<nav>
+							<span id="custom-prev" class="custom-prev"></span>
+							<span id="custom-next" class="custom-next"></span>
+							<span id="custom-current" class="custom-current" title="Got to current date"></span>
+						</nav>
+					</h3>
+				</div>
+				<div id="calendar" class="fc-calendar-container">
+					<div id="eDate">
+						<select id="eYY" class="form-control"></select>
+						<select id="eMM" class="form-control"></select>
+						<select id="eDD" class="form-control"></select>
+						<span id="toBS" class="btn btn-default">Convert Now</span>
+					</div>
+					<br />
+					<hr />
+					<br />
+					<div id="nDate">
+						<select id="nYY" class="form-control"></select>
+						<select id="nMM" class="form-control"></select>
+						<select id="nDD" class="form-control"></select>
+						<span id="toAD" class="btn btn-default">Convert Now</span>
+					</div>
+				</div>
+			</div>
+		</div><!-- /container -->
+	<script type="text/javascript" src="assets/jquery.js"></script>
+	<!-- <script type="text/javascript" src="assets/converter.js"></script> -->
+	<script type="text/javascript" src="assets/converter.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+</body>
+</html>
+
+<script>
+	var converter = $('body').myConverter();
+	//converter.convertToBS('2015', '3', '27');
+	$('#toBS').on('click', function(){
+		var YY = $('select#eYY').val();
+		var MM = $('select#eMM').val();
+		MM = parseInt(MM) + parseInt(1);
+		var DD = $('select#eDD').val();
+		var resultnDate = converter.convertToBS(YY, MM, DD);
+		$('span#result').text(' | Result => '+resultnDate);
+	});
+
+	$('#toAD').on('click', function(){
+		var YY = $('select#nYY').val();
+		var MM = $('select#nMM').val();
+		MM = parseInt(MM) + parseInt(1);
+		var DD = $('select#nDD').val();
+		var resultnDate = converter.convertToAD(YY, MM, DD);
+		$('span#result').text(' | Result => '+resultnDate);
+	});
+</script>
