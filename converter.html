@@ -2,20 +2,10 @@
 <html>
 <head><title>Date converter jQuery plugin</title>
 		<meta charset="utf-8">
-		<!-- <link rel="stylesheet" type="text/css" href="css/calendar.css" />
-		<link rel="stylesheet" type="text/css" href="css/custom_1.css" />
-		<link rel="stylesheet" type="text/css" href="css/custom.css" /> -->
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
-		<style>
-			select.form-control{
-				width: auto;
-				display: inline-block;
-			}
-			body {
-			    //min-height: 2000px;
-			    padding-top: 70px;
-			}
-		</style>
+		<link rel="stylesheet" type="text/css" href="css/converter-custom.css" />
+		<meta name="keywords" content="english to nepali, nepali to english, date, converter, mahesh, maharjan, mahesh247, mahesh247.com.np, BS, TO, AD" />
+		<meta name="description" content="A simple jquery plugin date converter - convert dates from english to nepali or nepali to english" />
 </head>
 <body>
 	<div class="container">
@@ -33,23 +23,14 @@
         <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
             <li class="active"><a href="#">Date Converter</a></li>
-            <li><a href="index.html">Nepali Calendar</a></li>
-            <!-- <li class="dropdown">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Dropdown <span class="caret"></span></a>
-              <ul class="dropdown-menu" role="menu">
-                <li><a href="#">Action</a></li>
-                <li><a href="#">Another action</a></li>
-                <li><a href="#">Something else here</a></li>
-                <li class="divider"></li>
-                <li class="dropdown-header">Nav header</li>
-                <li><a href="#">Separated link</a></li>
-                <li><a href="#">One more separated link</a></li>
-              </ul>
-            </li> -->
+            <li><a href="index.html">Calendar</a></li>
           </ul>
         </div><!--/.nav-collapse -->
+        
       </div>
+
     </nav>
+    <div id="my-link">Visit me @ <a href="http://www.mahesh247.com.np" target="_blank">mahesh247.com.np</a></div>
 			<div class="custom-calendar-wrap custom-calendar-full">
 				<div class="custom-header clearfix">
 					<h2>jQuery Date Converter Plugin<span id="result"></span></h2>
@@ -83,30 +64,8 @@
 			</div>
 		</div><!-- /container -->
 	<script type="text/javascript" src="assets/jquery.js"></script>
-	<!-- <script type="text/javascript" src="assets/converter.js"></script> -->
 	<script type="text/javascript" src="assets/converter.min.js"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="assets/converter-init.js"></script>
 </body>
 </html>
-
-<script>
-	var converter = $('body').myConverter();
-	//converter.convertToBS('2015', '3', '27');
-	$('#toBS').on('click', function(){
-		var YY = $('select#eYY').val();
-		var MM = $('select#eMM').val();
-		MM = parseInt(MM) + parseInt(1);
-		var DD = $('select#eDD').val();
-		var resultnDate = converter.convertToBS(YY, MM, DD);
-		$('span#result').text(' | Result => '+resultnDate);
-	});
-
-	$('#toAD').on('click', function(){
-		var YY = $('select#nYY').val();
-		var MM = $('select#nMM').val();
-		MM = parseInt(MM) + parseInt(1);
-		var DD = $('select#nDD').val();
-		var resultnDate = converter.convertToAD(YY, MM, DD);
-		$('span#result').text(' | Result => '+resultnDate);
-	});
-</script>

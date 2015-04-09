@@ -1,0 +1,30 @@
+/*
+	File: converter-custom.css
+	Date converter jQuery plugin by Mahesh Maharjan 2015
+	http://www.mahesh247.com.np
+*/
+
+select.form-control{
+	width: auto;
+	display: inline-block;
+}
+body {
+    //min-height: 2000px;
+    padding-top: 70px;
+}
+#my-link{
+	position: absolute;
+	width: 100%;
+	text-align: center;
+	bottom:2px;
+	right: 0px;
+	color: #777;
+}
+#my-link a{
+	color: #777;
+}
+#my-link a:hover, a:focus, a:active{
+	text-decoration: none;
+	outline: 0;
+	color: #000;
+}

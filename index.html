@@ -4,8 +4,10 @@
 		<meta charset="utf-8">
 		<link rel="stylesheet" type="text/css" href="css/calendar.css" />
 		<link rel="stylesheet" type="text/css" href="css/custom_1.css" />
-		<link rel="stylesheet" type="text/css" href="css/custom.css" />
+		<link rel="stylesheet" type="text/css" href="css/custom-calendar.css" />
 		<link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,400,300,600,700%7CRaleway:700' rel='stylesheet' type='text/css'>
+		<meta name="keywords" content="english nepali calendar, mahesh, maharjan, mahesh247, mahesh247.com.np" />
+		<meta name="description" content="A simple jquery plugin calendar - nepali english calendar with some fixed events" />
 </head>
 <body>
 	<div class="container">	
@@ -13,6 +15,7 @@
 				<div class="custom-header clearfix">
 					<h2>Nepali Calendar | <span><a href="converter.html"> Date Converter</a></span></h2>
 					<h3 class="custom-month-year">
+						<span id="custom-emonth-eyear" class="custom-emonth-eyear"></span>
 						<span id="custom-month" class="custom-month"></span>
 						<span id="custom-year" class="custom-year"></span>
 						<nav>
@@ -23,55 +26,13 @@
 					</h3>
 				</div>
 				<div id="calendar" class="fc-calendar-container"></div>
+
 			</div>
+			<div id="my-link">Visit me @ <a href="http://www.mahesh247.com.np" target="_blank">mahesh247.com.np</a></div>
 		</div><!-- /container -->
 	<script type="text/javascript" src="assets/jquery.js"></script>
-	<!--<script type="text/javascript" src="assets/custom.js"></script>-->
 	<script type="text/javascript" src="assets/calendar.min.js"></script>
-	<script type="text/javascript" src="json/data.js"></script>
+	<script type="text/javascript" src="assets/data.js"></script>
+	<script type="text/javascript" src="assets/calendar-init.js"></script>
 </body>
 </html>
-
-<script>
-	/*$('div').myFunc({
-		color: "red",
-		//backgroundColor: "grey"
-	});*/
-	var cal = $('#calendar').myCalendar({
-		onDayClick : function( $el, $contentEl, dateProperties ) {
-
-			for( var key in dateProperties ) {
-				console.log( key + ' = ' + dateProperties[ key ] );
-			}
-
-		},
-		caldata : codropsEvents
-	}),
-	$month = $( '#custom-month' ).html( cal.getMonthName() ),
-	$year = $( '#custom-year' ).html( cal._engToNepDigit(cal.getYear()) );
-
-	$( '#custom-next' ).on( 'click', function() {
-		cal.gotoNextMonth( updateMonthYear );
-	} );
-	$( '#custom-prev' ).on( 'click', function() {
-		cal.gotoPreviousMonth( updateMonthYear );
-	} );
-	$( '#custom-current' ).on( 'click', function() {
-		cal.gotoNow( updateMonthYear );
-	} );
-
-	function updateMonthYear() {				
-		$month.html( cal.getMonthName() );
-		$year.html( cal._engToNepDigit(cal.getYear()) );
-	}
-
-	/*$('#add').on( 'click', function() {
-					
-					cal.setData( {
-						'01-01-2072' : '<a href="#">testing</a>',
-					} );
-					// goes to a specific month/year
-					cal.goto( 1, 2072, updateMonthYear );
-
-				} );*/
-</script>

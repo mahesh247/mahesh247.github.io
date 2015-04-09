@@ -1,0 +1,34 @@
+/*
+	File: calendar-custom.js
+	Calendar jQuery plugin by Mahesh Maharjan 2015
+	http://www.mahesh247.com.np
+*/
+
+.holiday, .holiday span{
+	color: red !important;
+}
+
+.e-date{
+	bottom: 10px;
+	right: 10px;
+	position: absolute;
+	font-size: 26px;
+    font-weight: 300;
+    text-shadow: 0 1px 1px rgba(0, 0, 0, 0.3);
+}
+
+#my-link{
+	position: absolute;
+	width: 100%;
+	text-align: center;
+	bottom:2px;
+	right: 0px;
+	color: #fff;
+}
+#my-link a{
+	color: #fff;
+}
+#my-link a:hover, a:focus, a:active{
+	text-decoration: none;
+	outline: 0;
+}
