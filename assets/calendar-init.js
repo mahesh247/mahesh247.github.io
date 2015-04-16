@@ -8,7 +8,7 @@ var cal = $('#calendar').myCalendar({
 		onDayClick : function( $el, $contentEl, dateProperties ) {
 
 			for( var key in dateProperties ) {
-				console.log( key + ' = ' + dateProperties[ key ] );
+				//console.log( key + ' = ' + dateProperties[ key ] );
 			}
 
 		},
