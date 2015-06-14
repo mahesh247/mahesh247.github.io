@@ -22,15 +22,9 @@ body {
 }
 #my-link a{
 	color: #777;
-	text-decoration: none;
 }
-#my-link a:hover{
-	text-decoration: none;
-	outline: 0;
-	color: #000;
-}
-
 #my-link a:hover, a:focus, a:active{
 	text-decoration: none;
 	outline: 0;
+	color: #000;
 }
