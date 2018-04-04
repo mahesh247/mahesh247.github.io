@@ -11,7 +11,10 @@ var converter = $('body').myConverter();
 		MM = parseInt(MM) + parseInt(1);
 		var DD = $('select#eDD').val();
 		var resultnDate = converter.convertToBS(YY, MM, DD);
-		$('span#result').text(' | Result => '+resultnDate);
+		//$('span#result').text(' | Result => '+resultnDate);
+		$('#resultBS').remove();
+		$('#resultAD').remove();
+		$(this).after('<h3 id="resultBS"><span id="resultBS">Result => ' + resultnDate + '</span></h3>');
 	});
 
 	$('#toAD').on('click', function(){
@@ -20,6 +23,9 @@ var converter = $('body').myConverter();
 		MM = parseInt(MM) + parseInt(1);
 		var DD = $('select#nDD').val();
 		var resulteDate = converter.convertToAD(YY, MM, DD);
-		$('span#result').text(' | Result => '+resulteDate);
+		//$('span#result').text(' | Result => '+resulteDate);
+		$('#resultBS').remove();
+		$('#resultAD').remove();
+		$(this).after('<h3 id="resultAD"><span>Result => ' + resulteDate + '</span><h3>');
 	});
 });
