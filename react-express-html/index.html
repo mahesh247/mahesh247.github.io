@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+		<title>React Express</title>
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript
+			><link rel="stylesheet" href="assets/css/noscript.css"
+		/></noscript>
+		<style>
+			/* .image-container {
+				margin: 10px;
+				border: 15px solid rgb(255, 255, 255);
+				display: inline-flex;
+				overflow: hidden;
+				border-radius: 10px;
+				box-shadow: rgba(0, 0, 0, 0.3) 3px 4px 10px,
+					rgba(0, 0, 0, 0.2) 3px 4px 4px;
+			} */
+			h1 {
+				word-break: break-word;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="wrapper"></div>
+	</body>
+	<script>
+		window.onload = function() {
+			document.body.classList.remove('is-preload');
+		};
+		window.ontouchmove = function() {
+			return false;
+		};
+		window.onorientationchange = function() {
+			document.body.scrollTop = 0;
+		};
+	</script>
+	<script src="build/bundle.js"></script>
+</html>
